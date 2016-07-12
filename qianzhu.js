@@ -7,7 +7,6 @@ $(document).ready(function () {
     var nowPosition = 0;
     $("#nav").delegate('a', 'click', function (e) {
         var selectPosition = e.target.getAttribute("id").slice(-1)-1;
-
         $("#block").animate({
             marginTop: ((-selectPosition) * screemTop) + "px"
         }, function () {
@@ -27,11 +26,10 @@ $(document).ready(function () {
                     $("#block").stop();
                     $("#block").animate({
                         marginTop: (-nowPosition * screemTop) + "px"
-                    },"fast","swing",function () {
+                    },"slow","easeOutQuart",function () {
                         console.log("玩成向下")
                     });
                     console.log("向下");
-
                 }
 
             } else {
@@ -41,7 +39,7 @@ $(document).ready(function () {
                         $("#block").stop();
                     $("#block").animate({
                         marginTop: ((-nowPosition ) * screemTop) + "px"
-                    },"fast","swing",function () {
+                    },"slow","easeOutQuart",function () {
                         console.log("玩成向shang")
                     });
                     console.log("向上");
